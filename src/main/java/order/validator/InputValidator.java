@@ -3,7 +3,7 @@ package order.validator;
 import java.util.regex.Pattern;
 
 public class InputValidator {
-    public boolean orderValidator(String[] orders) {
+    public boolean requestOrderValidator(String[] orders) {
         for (String orderMenu : orders) {
             if (checkOrderFormat(orderMenu)) {
                 return false;

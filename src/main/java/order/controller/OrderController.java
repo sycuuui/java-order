@@ -2,6 +2,7 @@ package order.controller;
 
 import order.model.Orders;
 import order.repository.OrderRepository;
+import order.validator.OrderValidator;
 import order.view.Input;
 
 public class OrderController {
@@ -15,6 +16,7 @@ public class OrderController {
 
     public void order() {
         orderMenuProcess();
+        orderValidateProcess();
     }
 
     private void orderMenuProcess() {
@@ -22,5 +24,10 @@ public class OrderController {
 
         OrderRepository orderRepository = new OrderRepository(orders);
         orderRepository.saveOrder(datas);
+    }
+
+    private void orderValidateProcess() {
+        OrderValidator orderValidator = new OrderValidator(orders);
+        orderValidator.orderValidator();
     }
 }

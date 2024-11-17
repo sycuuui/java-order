@@ -20,7 +20,7 @@ public class Input {
         String input = scanner.next();
         String[] orders = input.split(",", -1);
 
-        while (!inputValidator.orderValidator(orders)) {
+        while (!inputValidator.requestOrderValidator(orders)) {
             System.out.println(ErrorMessage.ORDER.getMessage());
             input = scanner.next();
             orders = input.split(",", -1);
