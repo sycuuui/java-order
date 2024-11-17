@@ -47,7 +47,7 @@ public class Output {
     }
 
     private String menuMessage(String menu, int quantity) {
-        return menu + "(" + quantity + ")";
+        return menu + "(" + quantity + "개)";
     }
 
     private String priceMessage(int price) {

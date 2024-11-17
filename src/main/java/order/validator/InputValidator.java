@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class InputValidator {
     public boolean requestOrderValidator(String[] orders) {
         for (String orderMenu : orders) {
-            if (checkOrderFormat(orderMenu)) {
+            if (!checkOrderFormat(orderMenu)) {
                 return false;
             }
             if (checkEmptyBySplit(orderMenu)) {
@@ -20,6 +20,6 @@ public class InputValidator {
     }
 
     private boolean checkOrderFormat(String orderMenu) {
-        return Pattern.matches("[가-힣]+\\(\\d+개\\)", orderMenu);
+        return Pattern.matches("^[가-힣]+\\(\\d+개\\)$", orderMenu);
     }
 }

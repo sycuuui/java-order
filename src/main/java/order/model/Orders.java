@@ -68,7 +68,7 @@ public class Orders {
         List<OrderMenuRes> orderResults = new ArrayList<>();
 
         orders.forEach(
-                order -> orderResults.add(new OrderMenuRes(order.getMenu().name(), order.getQuantity(), order.getMenu().getPrice() * order.getQuantity()))
+                order -> orderResults.add(new OrderMenuRes(order.getMenu().getName(), order.getQuantity(), order.getMenu().getPrice() * order.getQuantity()))
         );
         return orderResults;
     }

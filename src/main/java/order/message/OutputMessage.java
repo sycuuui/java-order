@@ -19,6 +19,6 @@ public enum OutputMessage {
     }
 
     public String serviceMessage(int quantity) {
-        return SERVICE.message + "(" + quantity + ")";
+        return SERVICE.message + "(" + quantity + "개)";
     }
 }

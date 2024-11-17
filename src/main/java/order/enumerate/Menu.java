@@ -23,7 +23,7 @@ public enum Menu {
         return price;
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
