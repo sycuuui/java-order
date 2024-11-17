@@ -42,8 +42,8 @@ public class Orders {
     public int calculateServiceQuantity() {
         int count = 0;
         for (Order order : orders) {
-            if (!MenuGroup.isMain(order.getMenu())) {
-                count++;
+            if (MenuGroup.isMain(order.getMenu())) {
+                count += order.getQuantity();
             }
         }
         return count;
