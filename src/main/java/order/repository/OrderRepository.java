@@ -14,7 +14,7 @@ public class OrderRepository {
     }
 
     public void saveOrder(String[] datas) {
-        Pattern pattern = Pattern.compile("([가-힣]+)\\((\\d+)개\\)");
+        Pattern pattern = Pattern.compile("([가-힣\\s]+)\\((\\d+)개\\)");
         for (String data : datas) {
             Matcher matcher = pattern.matcher(data);
 

@@ -17,13 +17,12 @@ public class Input {
 
     public String[] requestOrder() {
         System.out.println(InputMessage.ORDER_MESSAGE.getMessage());
-        String input = scanner.next();
-        String[] orders = input.split(",", -1);
+        String input = scanner.nextLine();
+        String[] orders = input.split(",");
 
-        while (!inputValidator.requestOrderValidator(orders)) {
+        if (!inputValidator.requestOrderValidator(orders)) {
             System.out.println(ErrorMessage.ORDER.getMessage());
-            input = scanner.next();
-            orders = input.split(",", -1);
+            throw new IllegalArgumentException(ErrorMessage.ORDER.getMessage());
         }
 
         return orders;

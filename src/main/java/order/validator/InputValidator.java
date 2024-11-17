@@ -20,6 +20,6 @@ public class InputValidator {
     }
 
     private boolean checkOrderFormat(String orderMenu) {
-        return Pattern.matches("^[가-힣]+\\(\\d+개\\)$", orderMenu);
+        return Pattern.matches("([가-힣\\s]+)\\((\\d+)개\\)", orderMenu);
     }
 }
