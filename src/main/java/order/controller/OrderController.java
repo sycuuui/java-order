@@ -4,6 +4,7 @@ import order.model.Orders;
 import order.repository.OrderRepository;
 import order.validator.OrderValidator;
 import order.view.Input;
+import order.view.Output;
 
 public class OrderController {
     private Input input;
@@ -17,6 +18,7 @@ public class OrderController {
     public void order() {
         orderMenuProcess();
         orderValidateProcess();
+        resultProcess();
     }
 
     private void orderMenuProcess() {
@@ -29,5 +31,10 @@ public class OrderController {
     private void orderValidateProcess() {
         OrderValidator orderValidator = new OrderValidator(orders);
         orderValidator.orderValidator();
+    }
+
+    private void resultProcess() {
+        Output output = new Output(orders);
+        output.printResult();
     }
 }

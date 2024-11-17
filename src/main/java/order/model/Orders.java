@@ -1,5 +1,6 @@
 package order.model;
 
+import order.dto.OrderMenuRes;
 import order.enumerate.MenuGroup;
 
 import java.util.ArrayList;
@@ -61,5 +62,14 @@ public class Orders {
 
     public int totalPrice() {
         return deliverPrice() + totalOrderPrice();
+    }
+
+    public List<OrderMenuRes> getOrderResult() {
+        List<OrderMenuRes> orderResults = new ArrayList<>();
+
+        orders.forEach(
+                order -> orderResults.add(new OrderMenuRes(order.getMenu().name(), order.getQuantity(), order.getMenu().getPrice() * order.getQuantity()))
+        );
+        return orderResults;
     }
 }
