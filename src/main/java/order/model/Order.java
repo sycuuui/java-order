@@ -19,9 +19,9 @@ public class Order {
         return quantity;
     }
 
-    public Menu findMenu(String name) {
+    private Menu findMenu(String name) {
         Menu findmenu = Menu.findByName(name);
-        if(findmenu == null) {
+        if (findmenu == null) {
             throw new IllegalArgumentException();
         }
 
