@@ -7,7 +7,7 @@ public class Order {
     private final int quantity;
 
     public Order(String name, int quantity) {
-        this.menu = Menu.findByName(name);
+        this.menu = findMenu(name);
         this.quantity = quantity;
     }
 
@@ -17,5 +17,14 @@ public class Order {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public Menu findMenu(String name) {
+        Menu findmenu = Menu.findByName(name);
+        if(findmenu == null) {
+            throw new IllegalArgumentException();
+        }
+
+        return findmenu;
     }
 }
