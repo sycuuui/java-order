@@ -27,6 +27,7 @@ public enum Menu {
         return name;
     }
 
+    //name에 맞는 메뉴 이름 찾기
     public static Menu findByName(String name) {
         for (Menu menu : Menu.values()) {
             if (menu.getName().equals(name)) {
