@@ -11,6 +11,9 @@ public class OrderValidator {
         this.orders = orders;
     }
 
+    /*
+    주문 할 수 있는 조건에 따른 검증
+     */
     public void orderValidator() {
         checkMenuGroup();
         checkMinOrderPrice();
